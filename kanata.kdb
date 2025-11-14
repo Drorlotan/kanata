@@ -1,0 +1,65 @@
+(defsrc
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
+)
+
+(deflayer qwerty
+  grv 1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps @alsft    s    @dmw @fnav g    h    j    k    l    @ssft    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           @anm            ralt rmet rctl
+)
+
+(deflayer homenum
+  grv 1 2 3 4 5 6 7 8 9 0 - = bspc
+  tab q w e r t y u i o p [ ] \
+  _ 1 2 3 4 5 6 7 8 9 0 S-- ret
+  lsft z x c v b n m , . / rsft
+  lctl lmet lalt spc ralt rmet rctl
+)
+ 	
+(defalias
+  mwu (mwheel-up 50 120)
+  mwd (mwheel-down 50 120)
+  mwl (mwheel-left 50 120)
+  mwr (mwheel-right 50 120)
+)
+
+(deflayer navigation
+  _ _ _ _ _ _ _ _ _ _ _ _ _ _
+  _ _ _ _ _ _ _ _ _ _ _ _ _ _
+  _ _ _ _ _ _ left down up rght _ _ _  ;; H=left, J=down, K=up, L=rght
+  _ _ _ _ _ _ _ _ _ _ _ _
+  _ _ _ _ _ _ _
+)
+
+(deflayer mwheel
+  grv 1 2 3 4 5 6 7 8 9 0 - = bspc
+  tab q w e r t y u i o p [ ] \
+  caps a s d f g @mwr @mwd @mwu @mwl ; ' ret
+  lsft z x c v b n m , . / rsft
+  lctl lmet lalt spc ralt rmet rctl
+)
+
+
+(defalias
+  ;; ... other aliases ...
+  spn   (layer-toggle homenum)
+  mouse (layer-toggle mwheel)
+  nav   (layer-toggle navigation)
+  
+  ;; Tap for Space, Hold for homenum layer
+  anm  (tap-hold-release 200 200 spc @spn)
+  dmw  (tap-hold-release 200 200 d @mouse)
+  fnav (tap-hold-release 200 200 f @nav)
+  
+  ;; Tap for 'a', Hold for Left Shift
+  alsft (tap-hold-release 200 200 a lsft)
+
+  ;; Tap for ';', Hold for Right Shift
+  ssft (tap-hold-release 200 200 ; rsft)
+)
