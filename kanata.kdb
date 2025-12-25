@@ -10,7 +10,7 @@
   grv 1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   caps @alsft    s    @dmw @fnav g    h    j    k    l    @ssft    '    ret
-  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lsft @zctl    x    c    v    b    n    m    ,    .    @sctl    rsft 
   lctl lmet lalt           @anm            ralt rmet rctl
 )
 
@@ -21,7 +21,7 @@
   lsft z x c v b n m , . / rsft
   lctl lmet lalt spc ralt rmet rctl
 )
- 	
+  
 (defalias
   mwu (mwheel-up 50 120)
   mwd (mwheel-down 50 120)
@@ -32,7 +32,7 @@
 (deflayer navigation
   _ _ _ _ _ _ _ _ _ _ _ _ _ _
   _ _ _ _ _ _ _ _ _ _ _ _ _ _
-  _ _ _ _ _ _ left down up rght _ _ _  ;; H=left, J=down, K=up, L=rght
+  _ _ _ _ _ _ left down up rght _ _ _
   _ _ _ _ _ _ _ _ _ _ _ _
   _ _ _ _ _ _ _
 )
@@ -45,21 +45,21 @@
   lctl lmet lalt spc ralt rmet rctl
 )
 
-
 (defalias
   ;; ... other aliases ...
   spn   (layer-toggle homenum)
   mouse (layer-toggle mwheel)
   nav   (layer-toggle navigation)
   
-  ;; Tap for Space, Hold for homenum layer
+  ;; Space / Homenum
   anm  (tap-hold-release 200 200 spc @spn)
+
+  ;; Home Row Mods (Hold for Layer/Modifier, Tap for Key)
   dmw  (tap-hold-release 200 200 d @mouse)
   fnav (tap-hold-release 200 200 f @nav)
-  
-  ;; Tap for 'a', Hold for Left Shift
-  alsft (tap-hold-release 200 200 a lsft)
-
-  ;; Tap for ';', Hold for Right Shift
+  alsft (tap-hold-release 250 250 a lsft)
   ssft (tap-hold-release 200 200 ; rsft)
+
+  zctl (tap-hold-release 250 250 z lctl)
+  sctl (tap-hold-release 250 250 / rctl)
 )
