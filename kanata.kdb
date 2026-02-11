@@ -32,7 +32,7 @@
 (deflayer navigation
   _ _ _ _ _ _ _ _ _ _ _ _ _ _
   _ _ _ _ f5 _ _ bspc del _ _ _ _ _
-  _ _ _ _ _ _ left down up rght S-- _ _
+  _ _ _ _ _ home left down up rght end _ _
   _ _ _ _ _ _ f10 f11 _ _ _ _
   _ _ _ _ _ _ _
 )
